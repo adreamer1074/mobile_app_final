@@ -1,0 +1,206 @@
+@charset "utf-8";
+
+html {
+    font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    line-height: normal;
+    font-family: "Helvetica Neue",
+        Arial,
+        "Hirakuno kaku Gothic ProN", "Hiragino Sans",
+        Meiryo,
+        sans-serif;
+    background-image: url(../img/sakura_meguro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header {
+    margin-top: 40px;
+    color: #8b0000;
+    font-size: 38px;
+    font-weight: bold;
+    text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.65);
+    text-align: center;
+}
+
+#omikujiText {
+    position: relative;
+    margin: 10px auto;
+    font-weight: 800;
+    text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.65);
+    transition: 1s;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 100vw;
+    max-height: 100vh;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 23px;
+    text-align: center;
+
+}
+
+#btn1 {
+    position: relative;
+    margin: 20px auto;
+    width: 200px;
+    height: 400px;
+    background-image: url(../img/omikuji.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#btn1:hover {
+    animation: shaking 0.3s infinite;
+}
+
+@keyframes shaking {
+    0% {
+        transform: translate(0px, 0px)rotateZ(0deg);
+    }
+
+    25% {
+        transform: translate(2px, 2px)rotateZ(1deg);
+    }
+
+    50% {
+        transform: translate(0px, 2px)rotateZ(0deg);
+    }
+
+    75% {
+        transform: translate(2px, 0px)rotateZ(-1deg);
+    }
+
+    100% {
+        transform: translate(0px, 0px)rotateZ(0deg);
+    }
+
+}
+
+#btn1:active {
+    position: relative;
+    top: 5px;
+    left: 5px;
+
+}
+
+footer {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    margin: 0px;
+    padding: 1px;
+    color: rgb(241, 246, 248);
+    font: 16px Rajdhani;
+    text-align: center;
+    background: rgb(1, 24, 31, 0.7);
+}
+
+@keyframes shutterOpen {
+    0% {
+        width: 0;
+        height: 0.05em;
+
+    }
+
+    50% {
+        width: 100%;
+        height: 0.05em;
+
+    }
+
+    90% {
+        width: 100%;
+        height: 100%;
+    }
+
+    100% {
+        width: 100%;
+        height: 100%;
+
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        margin-top: 20px;
+        font-size: 30px;
+    }
+
+    #btn1 {
+        position: relative;
+        margin: 20px auto;
+        width: 150px;
+        height: 280px;
+        background-image: url(../img/omikuji.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    #omikujiText {
+        margin: 0;
+        font-weight: 800;
+    }
+
+    body {
+        background-position: 75% 0%;
+        background-size: auto 1000px;
+    }
+
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+.shutter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    margin: 0em;
+    padding: 0em;
+    background-color: #ad3131;
+    animation: byeShutter 2.5s forwards;
+}
+
+.shutter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    margin: auto;
+    background-color: #0489f7;
+    animation: shutterOpen 2.5s forwards;
+
+}
+
+@keyframes byeShutter {
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+        z-index: -1;
+    }
+}
