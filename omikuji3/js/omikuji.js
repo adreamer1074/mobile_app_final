@@ -42,7 +42,7 @@ btn1.addEventListener("click",
     let resultsMaxSpeed = [10,10,8,5,5];
     let resultMaxSize = [40,30,30,30,40]
     let resultImage = ["img/star.png", "img/sakura_hanabira.png", "img/sakura_hanabira.png",
-        "img/sakura_hanabira.png", "img/leaf.png", "img/IMG_1425.PNG"];
+        "img/sakura_hanabira.png", "img/leaf.png", "img/IMG_1425.JPG"];
     let resultSound = ["sound/omikuji_sound1.mp3","sound/omikuji_sound2.mp3","sound/omikuji_sound3.mp3","sound/omikuji_sound4.mp3",
     "sound/omikuji_sound5.mp3",]
     let n = Math.floor(Math.random() * resultText.length);
